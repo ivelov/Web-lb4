@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Лаба 2</title>
+  </head>
+  <body>
+    <form action="">
+      <div>
+        <input type="text">
+      </div>
+      <div>
+        <input type="text">
+      </div>
+      <div>
+        <input type="text">
+      </div>
+    </form>
+
+    <script>
+      
+      let inputs = document.querySelectorAll('input');
+
+      for (let i = 0; i < inputs.length; i++) {
+        inputs[i].addEventListener('focus',(event)=>{event.target.parentElement.classList.add('active')});
+        inputs[i].addEventListener('blur',(event)=>{event.target.parentElement.classList.remove('active')});
+      }
+    </script>
+    <style>
+      div{
+        width: 200px;
+        margin-top: 10px;
+        padding: 5px;
+      }
+     .active{
+      background-color: aqua;
+     }
+    </style>
+  </body>
+</html>
