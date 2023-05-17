@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Лаба 4</title>
+  </head>
+  <body>
+    <h2>Список товарiв:</h2>
+    <table>
+      <tr>
+        <td>Брюки</td>
+        <td>
+          <button onclick="addProduct(0)">Замовити</button>
+        </td>
+      </tr>
+      <tr>
+        <td>Сорочка</td>
+        <td>
+          <button onclick="addProduct(1)">Замовити</button>
+        </td>
+      </tr>
+      <tr>
+        <td>Шорти</td>
+        <td>
+          <button onclick="addProduct(2)">Замовити</button>
+        </td>
+      </tr>
+      <tr>
+        <td>Туфлi</td>
+        <td>
+          <button onclick="addProduct(3)">Замовити</button>
+        </td>
+      </tr>
+    </table>
+
+    <h2>Кошик:</h2>
+    <table>
+      <thead>
+        <td>Товар</td>
+        <td>Кiлькiсть</td>
+      </thead>
+      <tbody id="res"></tbody>
+    </table>
+
+    <script>
+      let products = [
+        {
+          name: "Брюки",
+          count: 0,
+        },
+        {
+          name: "Сорочка",
+          count: 0,
+        },
+        {
+          name: "Шорти",
+          count: 0,
+        },
+        {
+          name: "Туфлi",
+          count: 0,
+        },
+      ];
+
+      function addProduct(index) {
+        products[index].count++;
+        render();
+      }
+
+      function render() {
+        let rowsHtml = "";
+        for (let i = 0; i < products.length; i++) {
+          if (products[i].count > 0) {
+            rowsHtml += `<tr><td>${products[i].name}</td><td>${products[i].count}</td></tr>`;
+          }
+        }
+        document.getElementById("res").innerHTML = rowsHtml;
+      }
+    </script>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      td{
+        padding: 2px 5px;
+      }
+    </style>
+  </body>
+</html>
