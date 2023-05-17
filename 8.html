@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Лаба 4</title>
+  </head>
+  <body>
+    <img
+      id="img"
+      src="https://cdn.britannica.com/87/138787-050-33727493/Belovezhskaya-Forest-Poland.jpg"
+      alt=""
+    />
+    <br />
+    <button onclick="toggle()">Toggle</button>
+    <script>
+      let img = document.getElementById("img");
+
+      function toggle() {
+        img.classList.toggle("big");
+      }
+    </script>
+    <style>
+      img {
+        width: 200px;
+        height: 200px;
+      }
+      .big {
+        width: 400px;
+        height: 400px;
+      }
+    </style>
+  </body>
+</html>
